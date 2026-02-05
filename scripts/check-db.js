@@ -53,6 +53,8 @@ async function checkConnection() {
 }
 
 async function checkDatabaseVersion() {
+  console.log('Test log');
+  
   const query = await prisma.$queryRaw`select version() as version`;
   const version = semver.valid(semver.coerce(query[0].version));
 
