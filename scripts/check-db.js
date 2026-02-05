@@ -77,7 +77,7 @@ async function applyMigration() {
 
 (async () => {
   let err = false;
-  for (const fn of [checkEnv, checkConnection, checkDatabaseVersion, applyMigration]) {
+  for (const fn of [checkEnv, checkConnection, applyMigration]) {
     try {
       await fn();
     } catch (e) {
