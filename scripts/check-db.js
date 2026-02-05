@@ -83,7 +83,7 @@ async function applyMigration() {
       err = true;
     } finally {
       if (err) {
-        console.log(err?.message || err);
+        error(err?.message || err)
         
         process.exit(1);
       }
