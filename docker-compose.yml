@@ -5,7 +5,7 @@ services:
     ports:
       - "${APP_PORT}:${APP_PORT}"
     environment:
-      DATABASE_URL: ${CONNECTION_STRING}
+      DATABASE_URL: ${DATABASE_URL}
       APP_SECRET: ${APP_SECRET}
     init: true
     restart: always
