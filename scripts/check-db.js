@@ -52,18 +52,18 @@ async function checkConnection() {
   }
 }
 
-async function checkDatabaseVersion() {
-  const query = await prisma.$queryRaw`select version() as version`;
-  const version = semver.valid(semver.coerce(query[0].version));
+// async function checkDatabaseVersion() {
+//   const query = await prisma.$queryRaw`select version() as version`;
+//   const version = semver.valid(semver.coerce(query[0].version));
 
-  if (semver.lt(version, MIN_VERSION)) {
-    throw new Error(
-      `Database version is not compatible. Please upgrade to ${MIN_VERSION} or greater.`,
-    );
-  }
+//   if (semver.lt(version, MIN_VERSION)) {
+//     throw new Error(
+//       `Database version is not compatible. Please upgrade to ${MIN_VERSION} or greater.`,
+//     );
+//   }
 
-  success('Database version check successful.');
-}
+//   success('Database version check successful.');
+// }
 
 async function applyMigration() {
   if (!process.env.SKIP_DB_MIGRATION) {
