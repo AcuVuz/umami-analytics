@@ -60,7 +60,7 @@ USER nextjs
 
 EXPOSE 9080
 
-ENV HOSTNAME=0.0.0.0
-ENV PORT=9080
+# ENV HOSTNAME=0.0.0.0
+# ENV PORT=9080
 
 CMD ["pnpm", "start-docker"]
